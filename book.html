@@ -144,7 +144,56 @@ const books = {
 
 <p><a href="https://al-islam.org/awaited-saviour-ayatullah-sayyid-muhammad-baqir-sadr-ayatullah-murtadha-mutahhari" target="_blank" rel="noopener noreferrer">Read the complete original book on Al-Islam.org ↗</a></p>
 
+
+<div class="language-switch">
+  <p class="language-heading">Choose your reading language</p>
+  <button type="button" class="language-button active"
+    data-language="both">Both</button>
+  <button type="button" class="language-button"
+    data-language="urdu">Roman Urdu</button>
+  <button type="button" class="language-button"
+    data-language="english">Simple English</button>
+</div>
+
+<style>
+.language-switch {
+  margin: 24px 0;
+  padding: 16px;
+  background: #0a2934;
+  border: 1px solid #b99a55;
+  border-radius: 10px;
+}
+.language-heading {
+  color: #d5b66b;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+.language-button {
+  padding: 9px 13px;
+  margin: 3px;
+  border: 1px solid #b99a55;
+  border-radius: 22px;
+  background: transparent;
+  color: #f6f2e8;
+  cursor: pointer;
+}
+.language-button.active {
+  background: #d5b66b;
+  color: #101d2b;
+}
+.roman-urdu {
+  color: #cbd7d8;
+}
+body[data-reading-language="urdu"] .english-copy {
+  display: none;
+}
+body[data-reading-language="english"] .roman-urdu {
+  display: none;
+}
+</style>
+
 <h2>Your reading progress</h2>
+
 <p id="saviour-progress-text">0 of 10 sections completed</p>
 <div style="height:7px;background:#183641;border-radius:8px;overflow:hidden;">
   <div id="saviour-progress-bar" style="height:100%;width:0%;background:#e8bb70;transition:width .2s;"></div>
@@ -315,6 +364,20 @@ if (book) {
     <a class="back" href="book.html">← Back to all books</a>
   `;
 }
+
+
+document.addEventListener("click", function (event) {
+  const button = event.target.closest(".language-button");
+  if (!button) return;
+
+  document.body.dataset.readingLanguage =
+    button.dataset.language;
+
+  document.querySelectorAll(".language-button").forEach(item => {
+    item.classList.toggle("active", item === button);
+  });
+});
+
 
 const saviourChecks = document.querySelectorAll(".saviour-check");
 const progressText = document.getElementById("saviour-progress-text");
