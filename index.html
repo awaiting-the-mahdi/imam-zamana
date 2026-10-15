@@ -80,7 +80,7 @@ document.getElementById('searchOpen').addEventListener('click',()=>{searchPanel.
 document.getElementById('themeToggle').addEventListener('click',()=>{document.documentElement.classList.toggle('dark-mode');document.getElementById('themeToggle').textContent=document.documentElement.classList.contains('dark-mode')?'☀':'☾'});
 document.getElementById('menuToggle').addEventListener('click',()=>document.getElementById('navlinks').classList.toggle('open'));document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navlinks').classList.remove('open')));
 document.getElementById('allBooks').addEventListener('click',e=>{
- e.preventDefault();
+  e.preventDefault(); window.location.href='book.html'; return;
  showModal('Books and reading notes','Library',
  '<p>Choose a title to open its reading notes.</p><ul>'+
  '<li><a href="#" class="text-link library-book-link" data-book="saviour">The Awaited Saviour — Explore notes →</a></li>'+
