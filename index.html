@@ -80,7 +80,23 @@ function renderSearch(q=''){let matches=searchable.filter(x=>(x.title+' '+x.desc
 document.getElementById('searchOpen').addEventListener('click',()=>{searchPanel.classList.add('open');renderSearch('');searchInput.focus()});document.getElementById('searchClose').addEventListener('click',()=>searchPanel.classList.remove('open'));searchPanel.addEventListener('click',e=>{if(e.target===searchPanel)searchPanel.classList.remove('open')});searchInput.addEventListener('input',()=>renderSearch(searchInput.value));
 document.getElementById('themeToggle').addEventListener('click',()=>{document.documentElement.classList.toggle('dark-mode');document.getElementById('themeToggle').textContent=document.documentElement.classList.contains('dark-mode')?'☀':'☾'});
 document.getElementById('menuToggle').addEventListener('click',()=>document.getElementById('navlinks').classList.toggle('open'));document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navlinks').classList.remove('open')));
-document.getElementById('allBooks').addEventListener('click',e=>{e.preventDefault();showModal('Books and reading notes','Library','<p>The library is ready for you to expand. Add verified titles, chapter summaries and bibliographic details as you build your collection.</p><p>Suggested starting points include <em>Kamaluddin wa Tamamun Ni’ma</em> by Shaykh al-Saduq and <em>Al-Ghaybah</em> by Shaykh al-Tusi. Confirm the edition and translation you are using.</p>')});
+document.getElementById('allBooks').addEventListener('click',e=>{
+ e.preventDefault();
+ showModal('Books and reading notes','Library',
+ '<p>Choose a title to open its reading notes.</p><ul>'+
+ '<li><a href="#" class="text-link library-book-link" data-book="saviour">The Awaited Saviour — Explore notes →</a></li>'+
+ '<li><a href="#" class="text-link library-book-link" data-book="mission">The Imam and His Mission — Explore notes →</a></li>'+
+ '<li><a href="#" class="text-link library-book-link" data-book="kamaluddin">Kamaluddin wa Tamamun Ni&#39;ma — Explore notes →</a></li>'+
+ '<li><a href="#" class="text-link library-book-link" data-book="ghaybah">Al-Ghaybah — Explore notes →</a></li>'+
+ '</ul><p>Check the edition and translation you use before citing page numbers.</p>');
+ document.querySelectorAll('.library-book-link').forEach(a=>
+  a.addEventListener('click',e=>{
+   e.preventDefault();
+   const b=bookData[a.dataset.book];
+   if(b)showModal(b.title,b.kicker,b.body);
+  })
+ );
+});
 document.getElementById('allHadiths').addEventListener('click',e=>{e.preventDefault();showModal('Hadith library','Coming into focus','<p>This starter library deliberately contains a source-guidance example rather than unverified hadith quotations. Add narrations only after checking the original source and edition.</p><p>Recommended fields: Arabic text, translation, collection, author, volume, page or report number, edition, and grading source.</p>')});
 document.getElementById('year').textContent=new Date().getFullYear();
 </script>
