@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#061d27">
+<meta name="description" content="A reading library exploring Imam al-Mahdi (atfs), with book notes and source guidance.">
+<title>Reading Library — Awaiting the Mahdi</title>
+<style>
+:root {
+  --navy:#061d27;
+  --navy2:#0a2c38;
+  --gold:#e8bb70;
+  --cream:#f6f2e8;
+  --ink:#102633;
+  --muted:#aebdc0;
+  --line:rgba(232,187,112,.25);
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  background:var(--navy);
+  color:#f6f4ee;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.75;
+}
+a { color:inherit; text-decoration:none; }
+.container { width:min(900px,calc(100% - 40px)); margin:auto; }
+header {
+  position:sticky; top:0; z-index:5;
+  background:rgba(4,22,30,.96);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(14px);
+}
+.nav {
+  min-height:76px; display:flex;
+  align-items:center; justify-content:space-between; gap:16px;
+}
+.brand { font:22px Georgia,serif; color:var(--gold); }
+.back {
+  font-size:13px; color:#f4e7ce;
+  border:1px solid var(--line); border-radius:999px;
+  padding:8px 15px;
+}
+main { padding:65px 0 85px; min-height:75vh; }
+.eyebrow {
+  color:var(--gold); text-transform:uppercase;
+  letter-spacing:.22em; font-size:11px; font-weight:600;
+}
+h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; font-weight:400; }
+h1 { font-size:clamp(38px,7vw,58px); line-height:1.13; margin:14px 0; }
+h2 { font-size:27px; color:var(--gold); margin-top:38px; }
+h3 { font-size:21px; margin-top:26px; }
+.intro { color:#cbd7d8; max-width:650px; }
+.rule { height:1px; background:var(--line); margin:32px 0; }
+.library { display:grid; gap:14px; margin-top:32px; }
+.book {
+  display:block; padding:22px;
+  border:1px solid var(--line); border-radius:9px;
+  background:linear-gradient(120deg,#0a2934,#071f29);
+  transition:transform .2s,border-color .2s;
+}
+.book:hover { transform:translateY(-2px); border-color:var(--gold); }
+.book small { color:var(--gold); letter-spacing:.12em; text-transform:uppercase; }
+.book h2 { color:#f6f2e8; font-size:24px; margin:5px 0; }
+.book p { color:#b9c8ca; font-size:14px; margin:0; }
+article { color:#dce5e5; }
+article p, article li { font-size:16px; }
+article strong { color:#f4e2bd; }
+article ul, article ol { padding-left:24px; }
+.notice {
+  border-left:2px solid var(--gold);
+  background:#0a2934; padding:16px 20px;
+  color:#cbd7d8; font-size:14px; margin-top:28px;
+}
+footer {
+  border-top:1px solid var(--line);
+  background:#041820; padding:25px 0;
+  color:#91a6aa; font-size:12px;
+}
+footer .container { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+@media(max-width:560px) {
+  .nav { min-height:68px; }
+  .brand { font-size:18px; }
+  .back { font-size:12px; padding:7px 11px; }
+  main { padding:45px 0 60px; }
+  .book { padding:18px; }
+  article p, article li { font-size:15px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">Awaiting the Mahdi</a>
+    <a class="back" href="index.html">← Back to home</a>
+  </div>
+</header>
+<main class="container">
+  <div id="content">
+    <p class="eyebrow">The reading room</p>
+    <h1>Books &amp; Notes</h1>
+    <p class="intro">A place to study, reflect, and explore the teachings and history surrounding Imam al-Mahdi (atfs). These are starter reading notes, not substitutes for the original books.</p>
+    <div class="rule"></div>
+    <div class="library">
+      <a class="book" href="book.html?id=saviour">
+        <small>Book overview</small>
+        <h2>The Awaited Saviour →</h2>
+        <p>A guided framework for reading and recording key ideas.</p>
+      </a>
+      <a class="book" href="book.html?id=mission">
+        <small>Thematic reading</small>
+        <h2>The Imam and His Mission →</h2>
+        <p>Questions about justice, responsibility, and preparation.</p>
+      </a>
+      <a class="book" href="book.html?id=kamaluddin">
+        <small>Classical Imami source</small>
+        <h2>Kamaluddin wa Tamamun Ni'ma →</h2>
+        <p>A foundational work associated with Shaykh al-Saduq.</p>
+      </a>
+      <a class="book" href="book.html?id=ghaybah">
+        <small>Classical Imami source</small>
+        <h2>Al-Ghaybah →</h2>
+        <p>Reading guidance for the work of Shaykh al-Tusi.</p>
+      </a>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="container">
+    <span>Knowledge · Love · Preparation</span>
+    <a href="index.html">Return to the homepage ↑</a>
+  </div>
+</footer>
+<script>
+const books = {
+  saviour: {
+    title:"The Awaited Saviour",
+    kicker:"Book overview",
+    body:`
+      <p><strong>Start here:</strong> use this page as a reading guide, then compare each claim with the edition you have in front of you.</p>
+      <h2>Suggested chapter-note structure</h2>
+      <ol>
+        <li>Main question or claim</li>
+        <li>Key Qur'anic verses and narrations cited by the author</li>
+        <li>Historical or theological context</li>
+        <li>Questions to revisit after reading</li>
+      </ol>
+      <h2>While reading</h2>
+      <p>Record the chapter title and the exact edition you use. Add page numbers only after checking them in your own copy.</p>`
+  },
+  mission: {
+    title:"The Imam and His Mission",
+    kicker:"Thematic reading",
+    body:`
+      <p>This is a thematic study path, not a claim that a particular edition has been fully summarized.</p>
+      <h2>Questions for reflection</h2>
+      <ul>
+        <li>How is justice described in the text?</li>
+        <li>What responsibilities belong to believers during the occultation?</li>
+        <li>Which cited reports are traced to primary sources?</li>
+        <li>How does the author connect faith with action and character?</li>
+      </ul>
+      <p>Add chapter-specific summaries as you read and keep source citations beside each note.</p>`
+  },
+  kamaluddin: {
+    title:"Kamaluddin wa Tamamun Ni'ma",
+    kicker:"Classical Imami source",
+    body:`
+      <p>Attributed to Shaykh al-Saduq (Ibn Babawayh), this is an important early Imami work concerning the occultation and the arguments surrounding it.</p>
+      <h2>How to study it</h2>
+      <ol>
+        <li>Record the volume, chapter heading, and report number in your edition.</li>
+        <li>Separate the author's framing from the wording of each report.</li>
+        <li>Compare translations when an important theological term is involved.</li>
+        <li>Record questions that need further scholarly investigation.</li>
+      </ol>
+      <p>Page numbering varies between editions, so check your own copy before citing a page.</p>`
+  },
+  ghaybah: {
+    title:"Al-Ghaybah",
+    kicker:"Classical Imami source",
+    body:`
+      <p>Shaykh al-Tusi's <em>Al-Ghaybah</em> is another foundational work for studying reports and arguments related to the occultation.</p>
+      <h2>Reading checklist</h2>
+      <ul>
+        <li>Note the report number, chain, and chapter where provided.</li>
+        <li>Distinguish a report's inclusion in a book from a scholarly judgement about its authenticity.</li>
+        <li>Consult scholarly commentary for questions of grading or interpretation.</li>
+        <li>Record the edition and translation used in your notes.</li>
+      </ul>`
+  }
+};
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+const book = books[id];
+if (book) {
+  document.title = book.title + " — Awaiting the Mahdi";
+  document.getElementById("content").innerHTML = `
+    <p class="eyebrow">${book.kicker}</p>
+    <h1>${book.title}</h1>
+    <p class="intro">A study guide for thoughtful reading and careful source verification.</p>
+    <div class="rule"></div>
+    <article>${book.body}
+      <div class="notice"><strong>Source reminder:</strong> verify quotations, translations, report details, and page numbers against the edition you use. A report appearing in a collection does not automatically establish its authenticity.</div>
+    </article>
+    <div class="rule"></div>
+    <a class="back" href="book.html">← Back to all books</a>
+  `;
+}
+</script>
+</body>
+</html>
