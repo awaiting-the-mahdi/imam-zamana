@@ -88,6 +88,48 @@ footer .container { display:flex; justify-content:space-between; gap:12px; flex-
   .book { padding:18px; }
   article p, article li { font-size:15px; }
 }
+
+/* Shared bilingual reading controls */
+.language-switch {
+  margin: 24px 0;
+  padding: 16px;
+  background: #0a2934;
+  border: 1px solid #b99a55;
+  border-radius: 10px;
+}
+
+.language-heading {
+  color: #d5b66b;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.language-button {
+  padding: 9px 13px;
+  margin: 3px;
+  border: 1px solid #b99a55;
+  border-radius: 22px;
+  background: transparent;
+  color: #f6f2e8;
+  cursor: pointer;
+}
+
+.language-button.active {
+  background: #d5b66b;
+  color: #101d2b;
+}
+
+.roman-urdu {
+  color: #cbd7d8;
+}
+
+body[data-reading-language="urdu"] .english-copy {
+  display: none;
+}
+
+body[data-reading-language="english"] .roman-urdu {
+  display: none;
+}
 </style>
 </head>
 <body>
