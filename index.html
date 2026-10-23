@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#061d27">
+  <link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icons/icon.svg">
 <meta name="description" content="Explore books, chapter summaries, and carefully referenced narrations about Imam al-Mahdi (atfs).">
 <title>Awaiting the Mahdi — Knowledge • Love • Preparation</title>
 <style>
@@ -131,6 +133,16 @@ document.getElementById('allBooks').addEventListener('click',e=>{
 });
 document.getElementById('allHadiths').addEventListener('click',e=>{e.preventDefault();showModal('Hadith library','Coming into focus','<p>This starter library deliberately contains a source-guidance example rather than unverified hadith quotations. Add narrations only after checking the original source and edition.</p><p>Recommended fields: Arabic text, translation, collection, author, volume, page or report number, edition, and grading source.</p>')});
 document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+  <script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("./sw.js")
+      .catch(function (error) {
+        console.warn("PWA service worker registration failed:", error);
+      });
+  });
+}
 </script>
 </body>
 </html>
