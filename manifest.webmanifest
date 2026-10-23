@@ -1,0 +1,22 @@
+
+{
+  "id": "./",
+  "name": "Awaiting the Mahdi",
+  "short_name": "Awaiting Mahdi",
+  "description": "Explore books, chapter summaries, and referenced narrations about Imam al-Mahdi (atfs).",
+  "lang": "en",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#061d27",
+  "theme_color": "#061d27",
+  "icons": [
+    {
+      "src": "./icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
